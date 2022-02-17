@@ -106,8 +106,10 @@ body {
   margin: 0;
 }
 @media (max-width: 460px) {
-  .header__menu-item {
+  .header__menu{
     flex-direction: column;
+  }
+  .header__menu-item {
     margin-bottom: 10px;
   }
   .header__menu-item:last-child {
@@ -572,7 +574,11 @@ body {
 
 @media (max-width: 990px) {
   .advice__container {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .advice__title {
@@ -580,6 +586,7 @@ body {
   }
   .advice__text {
     margin-right: 0px;
+    text-align: center;
   }
 
   .advice__img {
@@ -608,19 +615,13 @@ body {
 }
 
 .contact__text {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-right: 125px;
+  margin: 0;
   font-weight: normal;
   font-size: 14px;
   line-height: 140%;
   text-align: justify;
 
   color: #000000;
-}
-
-.contact__form {
-  margin: 0 auto;
 }
 
 .form__input {
@@ -659,61 +660,48 @@ body {
   position: relative;
 }
 
-.select-wrap::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-image: url(../img/down_arrow.png);
-  height: 8px;
-  width: 15px;
-  right: 23px;
-}
-
 .form__select-long {
-  appearance: none;
   display: block;
   border: 1px solid #333333;
   box-sizing: border-box;
   border-radius: 6px;
-  width: 540px;
-  height: 60px;
+  width: 100%;
+  max-width: 540px;
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  padding-top: 21px;
-  padding-left: 31px;
-  padding-bottom: 20px;
+  padding: 20px 30px;
   margin-bottom: 27px;
-
   color: rgba(19, 39, 67, 0.5);
+}
+
+select,
+select:focus,
+select:active,
+option,
+option:focus,
+option:active {
+  outline: none;
+  cursor: pointer;
+}
+
+option {
+  background: #e6e4e4;
 }
 
 @media (max-width: 990px) {
   .contact__container {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-
   .contact__text {
-    margin-right: 0px;
+    text-align: center;
   }
-
   .contact__form {
-    width: 100%;
     margin-top: 50px;
   }
 
-  .form__input {
-    width: 45%;
-  }
-
-  .form__input-long {
-    width: 100%;
-  }
-
-  .form__select-long {
-    width: 100%;
-  }
 }
 
 @media (max-width: 570px) {
